@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FlockManager : MonoBehaviour
+public class FlockManager1 : MonoBehaviour
 {
     public float Speed = 5f;
     public float AvoidanceDistance = 2f;
@@ -16,8 +16,9 @@ public class FlockManager : MonoBehaviour
         {
             followPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             TargetSpriteAnimate.Instance.transform.position = followPoint;
-            //AstarPath.active.Scan();
         }
+
+
         foreach (Bird bird in birdsInFlock)
         {
             StayOnScreenTeleport(bird);
@@ -85,6 +86,8 @@ public class FlockManager : MonoBehaviour
         if (nAvoid > 0) moveAway /= nAvoid;
         return moveAway.normalized;
     }
+
+
     Vector2 FollowPoint(Bird bird)
     {
         Vector2 direction = followPoint - (Vector2)bird.transform.position;

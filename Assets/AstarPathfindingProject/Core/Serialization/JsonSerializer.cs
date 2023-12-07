@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding.Util;
 using Pathfinding.WindowsStore;
-//using Unity.VisualScripting.IonicZip;
 
 #if ASTAR_NO_ZIP
 using Pathfinding.Serialization.Zip;
